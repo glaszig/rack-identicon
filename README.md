@@ -24,9 +24,9 @@ Use the middleware with plain rack:
 
 ```rb
 # config.ru
-require "rack-identicon"
-use Rack::Identicon
-run Sinatra::Application
+require "rack/identicon"
+map("/__identicon__") { run Rack::Identicon.new }
+run lambda { |env| [200, {'Content-Type' => 'text/plain'}, ['OK']] }
 ```
 
 Use with Rails:
