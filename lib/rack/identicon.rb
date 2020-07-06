@@ -12,6 +12,10 @@ module Rack
       Middleware.new *args
     end
 
+    def self.call env
+      new.call env
+    end
+
     class Middleware
       def call env
         Response.new(env).triplet
