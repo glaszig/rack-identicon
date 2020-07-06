@@ -2,6 +2,8 @@ module Rack
   module Identicon
     module Caching
 
+      NAMESPACE = "rack-identicon".freeze
+
       def self.included base
         base.extend ClassMethods
         base.cache_store = NullCacheStore.new
@@ -27,7 +29,7 @@ module Rack
         attr_accessor :cache_store
 
         def cache key, &blk
-          cache_store.fetch key, &blk
+          cache_store.fetch NAMESPACE + "/" + key, &blk
         end
       end
 
