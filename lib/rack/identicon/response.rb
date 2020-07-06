@@ -36,7 +36,7 @@ module Rack
         end
 
         def payload
-          @payload ||= @request.path_info[1..-1].strip
+          @payload ||= @request.path_info[1..-1].to_s.strip
         end
 
         def parse_color hex_str

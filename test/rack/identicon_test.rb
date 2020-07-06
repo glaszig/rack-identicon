@@ -24,6 +24,10 @@ class Rack::IdenticonTest < Minitest::Test
   end
 
   def test_not_found
+    get '/__identicon__'
+    assert last_response.not_found?
+    assert_equal last_response.body, "Not Found"
+
     get '/__identicon__/'
     assert last_response.not_found?
     assert_equal last_response.body, "Not Found"
