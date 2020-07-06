@@ -20,7 +20,23 @@ Or install it yourself as:
 
 ## Usage
 
+Use the middleware with plain rack:
 
+```rb
+# config.ru
+require "rack-identicon"
+use Rack::Identicon
+run Sinatra::Application
+```
+
+Use with Rails:
+
+```rb
+# config/routes.rb
+Rails.application.routes.draw do
+  mount Rack::Identicon.new, at: "/__identicon__", as: :identicon
+end
+```
 
 ## Development
 
