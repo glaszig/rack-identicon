@@ -4,10 +4,7 @@ class Rack::IdenticonTest < Minitest::Test
   include Rack::Test::Methods
 
   def app
-    @app ||= Rack::Builder.app do
-      map("/__identicon__") { run Rack::Identicon.new }
-      run lambda { |env| [200, {'Content-Type' => 'text/plain'}, ['OK']] }
-    end
+    @app ||= Rack::Builder.parse_file("config.ru").first
   end
 
   def test_response_is_ok
