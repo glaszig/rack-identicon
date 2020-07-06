@@ -53,3 +53,5 @@ module Rack
     end
   end
 end
+
+require "rack/identicon/railtie" if defined? ::Rails
