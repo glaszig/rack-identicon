@@ -10,7 +10,7 @@ rvm:
 before_install: gem install bundler -v 2.1.4
 deploy:
   provider: rubygems
-  gem: rake-identicon
+  gem: rack-identicon
   api_key:
     secure: VpqLsVFF5QepC59kIu32n11SGUIrAgWdHdFS2ubb4+xi4lIQps9ImZFxHAuZjeakNVYJ110AETG+BH6Lblw52xNIQgd+toX10Y/SmiRHVrkMS+AJ9wuuEhWjcxzNIu+2GWrpAVKFa6+dLNxkWaoF/6zGIA/KG2pUyH9jZv3XhYgVRD7unn3f3llEgEbVVkIAv5nx6PtWaYYi0KciCM57yQSTNsckhQQGhAXiVbHOcIDzas42EBtja+PT7IOITGTz5S8dDrTTn56RNnumCD6BUwJ3SayHf9Hsc4zdnYxHzHEAhL/TPv4/b8WcHj1COAliDU1Ko2GsZWn9Wa99xeGFN07553ezA/wvytd2z6YPwOg/Iy4J1XuiKC1XWI2mPEyZ/cbZ46ysZw7uIuN2n5stLRxTgE74Jczf2nFVGLTk7DyRQNdLuSDbzjRqso/cg1NpFXSv/EzFHve84ydAuPDiOx5VTaEv4zMyV224DzbjoI3xzb3wgF2b/BcgxnUKucrZDsRv0/tyKzhWj6SkgBubDKr+CBMl5zTW8XXofdiL7wStCRLBrUKBzBX9mxCWzPTs4F4UYYyrbIOsmm+UOJny1eTcq7AtAw+zH7swVH/Lknz+EyUy001OhrAf3nIu74671gLhyS1F8nQs7Jvnd+V6jLvD23lNyt5msI47+jo6Jr8=
   on:
