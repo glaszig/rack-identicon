@@ -12,8 +12,8 @@ module Rack
     DEFAULT_SIZE = 128
     DEFAULT_BG   = "ffffff".freeze
 
-    def self.new
-      Middleware.new
+    def self.new *args
+      Middleware.new *args
     end
 
     class Middleware
