@@ -38,6 +38,17 @@ Rails.application.routes.draw do
 end
 ```
 
+### Caching
+
+Rack::Identicon supports caching through any object implementing the methods
+`read(key)`, `write(key, data)`, `exist?(key)` and `fetch(key, &blk)`.
+When used with Rails it'll use `Rails.cache` automatically. Outside of Rails
+you'll need to configure your cache store like this:
+
+```rb
+Rack::Identicon.cache_store = MyStore.new
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
