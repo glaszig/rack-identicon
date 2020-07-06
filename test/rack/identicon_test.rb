@@ -22,4 +22,10 @@ class Rack::IdenticonTest < Minitest::Test
 
     assert_equal File.binread("test/fixtures/identicon.png"), last_response.body
   end
+
+  def test_not_found
+    get '/__identicon__/'
+    assert last_response.not_found?
+    assert_equal last_response.body, "Not Found"
+  end
 end

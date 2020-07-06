@@ -19,10 +19,19 @@ module Rack
     class Middleware
       def call env
         request = Rack::Request.new env
-        [ 200, { "Content-Type" => "image/png" }, [ response_body(request) ] ]
+
+        if valid_request? request
+          [ 200, { "Content-Type" => "image/png" }, [ response_body(request) ] ]
+        else
+          [ 404, { "Content-Type" => "text/plain" }, [ "Not Found" ] ]
+        end
       end
 
       protected
+
+        def valid_request? request
+          request.path_info[1..-1].strip.length > 0
+        end
 
         def response_body request
           Rack::Identicon.cache cache_key(request) do
