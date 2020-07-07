@@ -6,6 +6,7 @@ module Rack
     class Response
       DEFAULT_SIZE = 128
       DEFAULT_BG   = "ffffff".freeze
+      ONE_YEAR     = 31536000
 
       def initialize env
         @request = Rack::Request.new env
@@ -17,11 +18,18 @@ module Rack
         cache { ::Identicon.blob_for hashed_payload, @size.to_i, @bg }
       end
 
+      def headers
+        {
+          "Content-Type" => valid_request? ? "image/png" : "text/plain",
+          "Cache-Control" => "public, max-age=#{ONE_YEAR}"
+        }
+      end
+
       def triplet
         if valid_request?
-          [ 200, { "Content-Type" => "image/png" }, [ body ] ]
+          [ 200, headers, [ body ] ]
         else
-          [ 404, { "Content-Type" => "text/plain" }, [ "Not Found" ] ]
+          [ 404, headers, [ "Not Found" ] ]
         end
       end
 
