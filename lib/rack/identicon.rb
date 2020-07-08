@@ -9,17 +9,7 @@ module Rack
     include Caching
 
     def self.new *args
-      Middleware.new *args
-    end
-
-    def self.call env
-      new.call env
-    end
-
-    class Middleware
-      def call env
-        Response.new(env).triplet
-      end
+      proc { |env| Response.new(env).triplet }
     end
   end
 end
