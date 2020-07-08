@@ -1,6 +1,6 @@
 # Rack::Identicon
 
-Rack middleware to generate identicons through the [identicon gem](https://rubygems.org/gems/identicon).
+Rack app to generate identicons through the [identicon gem](https://rubygems.org/gems/identicon).
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Use the middleware with plain rack:
+Use the app with plain rack:
 
 ```rb
 # config.ru
