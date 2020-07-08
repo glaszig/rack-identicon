@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["glaszig@gmail.com"]
 
   spec.summary       = %q{Generates Identicon for arbitrary data on the fly.}
-  spec.description   = %q{Gives you a Rack middleware to generate pictures representing data, like gravatar does.}
+  spec.description   = %q{Gives you a Rack app to generate pictures representing data, like gravatar does.}
   spec.homepage      = "https://github.com/glaszig/rack-identicon"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
